@@ -17,6 +17,7 @@ keys/
 outbound/
 
 public_keys.json
+safety_send.txt
 
 # logs
 *.log
