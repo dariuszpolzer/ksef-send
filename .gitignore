@@ -1,0 +1,29 @@
+# env
+.env
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# keys / secrets
+keys/
+*.pem
+*.key
+*.crt
+
+# runtime data
+outbound/
+
+public_keys.json
+
+# logs
+*.log
+
+# system files
+.DS_Store
+Thumbs.db
+
+# node (jeśli kiedyś będzie PDF renderer)
+node_modules/
