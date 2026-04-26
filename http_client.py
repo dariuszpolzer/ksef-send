@@ -6,14 +6,14 @@ class HttpClient:
         self.base_url = base_url.rstrip("/") if base_url else ""
         
     def safe_json_response(response):
-    try:
-        return response.json()
-    except Exception:
-        return {
-            "_not_json": True,
-            "status_code": response.status_code,
-            "text": response.text,
-        }
+        try:
+            return response.json()
+        except Exception:
+            return {
+                "_not_json": True,
+                "status_code": response.status_code,
+                "text": response.text,
+            }
 
     def request(self, method: str, url: str, headers=None, json_body=None):
         response = requests.request(

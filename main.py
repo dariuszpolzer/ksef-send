@@ -12,10 +12,18 @@ from validator.business_rules import check_business_rules
 from sender.send_manifest import upsert_invoice
 from sender.send_invoice import prepare_invoice_payload
 from sender.ksef_sender import send_approved_dry_run
-from sender.ksef_sender import send_approved_dry_run, send_approved_real
+
 from sender.pdf_preview import generate_pdf_preview
 from sender.archive import archive_invoice
 from sender.ksef_online_session import get_access_token
+
+
+
+
+from sender.ksef_sender import send_approved_dry_run
+from sender.ksef_real_send import send_invoice_real
+
+
 
 def print_menu():
     print("\nKSeF Send")
@@ -272,11 +280,10 @@ def main():
                     
                     
             elif choice == "11":
+                from sender.ksef_online_session import get_access_token
+
                 token = get_access_token()
                 print("Access token OK:", token[:30] + "...")
-
-                xml_file = files[0]
-                pdf_file = config.PREVIEW_DIR / f"{xml_file.stem}.pdf"
          
 
             elif choice == "12":

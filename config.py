@@ -128,6 +128,6 @@ def validate_config():
     if errors:
         raise RuntimeError("Błędy konfiguracji: " + "; ".join(errors))
         if KSEF_ENV == "prod" and not ALLOW_PROD_SEND:
-        print("\n⚠ PRODUKCJA KSeF jest zablokowana.")
-        print("Aby wysyłać faktury ustaw w .env:")
-        print("ALLOW_PROD_SEND=true\n")
+            print("\n⚠ PRODUKCJA KSeF jest zablokowana.")
+            print("Aby wysyłać faktury ustaw w .env:")
+            print("ALLOW_PROD_SEND=true\n")
